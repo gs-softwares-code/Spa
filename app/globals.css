@@ -1,0 +1,311 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   Serein Spa & Wellness — design tokens (Contemporary Luxury / Organic Minimal)
+   ========================================================================== */
+
+:root {
+  --ivory: #faf6ee;
+  --cream: #f3ecdf;
+  --sand: #e7dbc6;
+  --sand-deep: #d6c4a6;
+  --gold: #b39164;
+  --gold-soft: #cdb68e;
+  --sage: #86947f;
+  --sage-deep: #5c6b57;
+  --forest: #3f4c3a;
+  --earth: #4a3d31;
+  --ink: #2b2620;
+  --muted: #857a6d;
+  --line: rgba(75, 63, 48, 0.14);
+  --shadow-soft: 0 24px 60px -30px rgba(58, 47, 34, 0.35);
+  --shadow-card: 0 18px 45px -28px rgba(58, 47, 34, 0.4);
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-forest: var(--forest);
+  --color-earth: var(--earth);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Custom utilities ---------- */
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+}
+
+.tint-sage { background: var(--sage); }
+.tint-sage-deep { background: var(--sage-deep); }
+.tint-sand { background: var(--sand); }
+.tint-sand-deep { background: var(--sand-deep); }
+.tint-gold { background: var(--gold); }
+.tint-gold-soft { background: var(--gold-soft); }
+.tint-earth { background: var(--earth); }
+.tint-forest { background: var(--forest); }
+.tint-ivory { background: var(--ivory); }
+.tint-cream { background: var(--cream); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-size: 0.88rem;
+  padding: 0.95rem 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease,
+    border-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--forest);
+  color: var(--ivory);
+  box-shadow: 0 14px 30px -16px rgba(63, 76, 58, 0.7);
+}
+.btn-primary:hover { background: var(--earth); }
+
+.btn-gold {
+  background: var(--gold);
+  color: #fff;
+  box-shadow: 0 14px 30px -16px rgba(179, 145, 100, 0.85);
+}
+.btn-gold:hover { background: var(--gold-soft); }
+
+.btn-outline {
+  border-color: var(--gold);
+  color: var(--earth);
+  background: transparent;
+}
+.btn-outline:hover { background: rgba(179, 145, 100, 0.1); }
+
+.btn-light {
+  background: var(--ivory);
+  color: var(--forest);
+}
+.btn-light:hover { background: #fff; }
+
+.btn-ghost {
+  color: var(--earth);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--gold);
+  padding: 0.4rem 0.2rem;
+}
+.btn-ghost:hover { color: var(--gold); }
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.card-solid {
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+/* Section label / container */
+.section-veil {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.prose-lux p + p { margin-top: 1rem; }
+.prose-lux { line-height: 1.75; color: var(--earth); }
+
+/* Inputs */
+.field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field::placeholder { color: #a89b8c; }
+.field:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(179, 145, 100, 0.18);
+}
+.field-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+select.field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b39164' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.6rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--earth);
+  font-size: 0.82rem;
+  padding: 0.45rem 1rem;
+}
+
+/* ---------- Organic / atmospheric elements ---------- */
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.blob {
+  border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+  animation: blobFloat 16s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% { border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%; }
+  33% { border-radius: 48% 52% 42% 58% / 52% 44% 56% 48%; }
+  66% { border-radius: 55% 45% 60% 40% / 44% 58% 42% 56%; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes drift {
+  from { transform: translateY(0) translateX(0) rotate(0deg); }
+  to { transform: translateY(-16px) translateX(8px) rotate(4deg); }
+}
+.animate-drift { animation: drift 9s ease-in-out infinite alternate; }
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.05); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 35s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Marquee for announcement bar */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- Utility for text balance ---------- */
+.text-balance { text-wrap: balance; }
+
+::selection { background: rgba(179, 145, 100, 0.3); }
+
+/* Thin elegant scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--sand-deep); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
